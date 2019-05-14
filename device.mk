@@ -203,4 +203,8 @@ include vendor/qcom/opensource/display-commonsys-intf/config/display-product-sys
 PRODUCT_PRODUCT_PROPERTIES += \
     ro.control_privapp_permissions=log
 
-include vendor/xiaomi/renoir/renoir-vendor.mk
+# Lights
+PRODUCT_PACKAGES += \
+    android.hardware.light@2.0-service.renoir
+
+include vendor/xiaomi/sweet/sweet-vendor.mk
