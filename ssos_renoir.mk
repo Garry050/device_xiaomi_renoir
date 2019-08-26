@@ -41,11 +41,8 @@ PRODUCT_MANUFACTURER := Xiaomi
 
 PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
 
-# Build info
-BUILD_FINGERPRINT := "google/walleye/walleye:8.1.0/OPM1.171019.011/4448085:user/release-keys"
-
 TARGET_BOOT_ANIMATION_RES := 1080
 
 # Inherit ShapeShiftOS common properties.
 PRODUCT_PRODUCT_PROPERTIES += \
-    ro.ssos.cpu=SD780
+    ro.ssos.cpu=SD780G
