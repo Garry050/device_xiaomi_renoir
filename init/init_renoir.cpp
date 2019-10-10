@@ -27,43 +27,62 @@
    IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
+#include <vector>
+
 #include <android-base/properties.h>
 #define _REALLY_INCLUDE_SYS__SYSTEM_PROPERTIES_H_
 #include <sys/_system_properties.h>
 
 using android::base::GetProperty;
 
+std::vector<std::string> ro_props_default_source_order = {
+    "",
+    "bootimage.",
+    "odm.",
+    "product.",
+    "system.",
+    "vendor.",
+};
 
-void property_override(char const prop[], char const value[])
+void property_override(char const prop[], char const value[], bool add = true)
 {
     prop_info *pi;
-    pi = (prop_info*) __system_property_find(prop);
+
+    pi = (prop_info *) __system_property_find(prop);
     if (pi)
         __system_property_update(pi, value, strlen(value));
-    else
+    else if (add)
         __system_property_add(prop, strlen(prop), value, strlen(value));
 }
-void property_override_dual(char const system_prop[],
-    char const vendor_prop[], char const value[])
-{
-    property_override(system_prop, value);
-    property_override(vendor_prop, value);
-}
+
+void set_ro_build_prop(const std::string &prop, const std::string &value) {
+    for (const auto &source : ro_props_default_source_order) {
+        auto prop_name = "ro." + source + "build." + prop;
+        property_override(prop_name.c_str(), value.c_str(), false);
+    }
+};
+
+void set_ro_product_prop(const std::string &prop, const std::string &value) {
+    for (const auto &source : ro_props_default_source_order) {
+        auto prop_name = "ro.product." + source + prop;
+        property_override(prop_name.c_str(), value.c_str(), false);
+    }
+};
 
 void vendor_load_properties() {
     std::string region;
     region = GetProperty("ro.boot.hwc", "GLOBAL");
 
     if (region == "GLOBAL") {
-        property_override_dual("ro.product.model", "ro.vendor.product.model", "Mi 11 Lite 5G");
-        property_override_dual("ro.product.device", "ro.product.vendor.device", "renoir");
-        property_override_dual("ro.build.fingerprint", "ro.vendor.build.fingerprint", "Xiaomi/renoir_eea/renoir:11/RKQ1.201112.002/V12.5.3.0.RKIEUXM:user/release-keys");
+        set_ro_product_prop("ro.product.model", "ro.vendor.product.model", "Mi 11 Lite 5G");
+        set_ro_product_prop("ro.product.device", "ro.product.vendor.device", "renoir");
+        set_ro_build_prop("ro.build.fingerprint", "ro.vendor.build.fingerprint", "Xiaomi/renoir_eea/renoir:11/RKQ1.201112.002/V12.5.3.0.RKIEUXM:user/release-keys");
         property_override("ro.build.description", "renoir-user 11 RKQ1.201112.002 V12.5.3.0.RKIEUXM release-keys");
         property_override("ro.product.mod_device", "renoir_eea_global");
     } else if (region == "JP") {
-        property_override_dual("ro.product.model", "ro.vendor.product.model", "Mi 11 Lite 5G Japan");
-        property_override_dual("ro.product.device", "ro.product.vendor.device",  "renoir");
-        property_override_dual("ro.build.fingerprint", "ro.vendor.build.fingerprint", "Xiaomi/renoir_jp/renoir:11/RKQ1.201112.002/V12.5.4.0.RKIJPXM:user/release-keys");
+        set_ro_product_prop("ro.product.model", "ro.vendor.product.model", "Mi 11 Lite 5G Japan");
+        set_ro_product_prop("ro.product.device", "ro.product.vendor.device",  "renoir");
+        set_ro_build_prop("ro.build.fingerprint", "ro.vendor.build.fingerprint", "Xiaomi/renoir_jp/renoir:11/RKQ1.201112.002/V12.5.4.0.RKIJPXM:user/release-keys");
         property_override("ro.build.description", "renoir-user 11 RKQ1.201112.002 V12.5.4.0.RKIJPXM release-keys");
 	property_override("ro.product.mod_device", "renoir_jp_global");
 }
