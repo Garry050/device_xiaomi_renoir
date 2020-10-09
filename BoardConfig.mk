@@ -116,7 +116,7 @@ TARGET_USES_QCOM_BSP := false
 TARGET_USERIMAGES_SPARSE_EXT_DISABLED := false
 
 # Power
-TARGET_POWER_SET_FEATURE_LIB := libpower_feature.renoir
+TARGET_POWERHAL_MODE_EXT := $(DEVICE_PATH)/power/power-mode.cpp
 
 #HIDL
 DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE += $(DEVICE_PATH)/vendor_framework_compatibility_matrix.xml
