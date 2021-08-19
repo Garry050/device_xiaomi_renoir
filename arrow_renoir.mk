@@ -45,8 +45,5 @@ PRODUCT_MANUFACTURER := Xiaomi
 PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
 
 # Build info
-BUILD_FINGERPRINT := "Redmi/renoir/renoir:11/RKQ1.201112.002/V12.5.3.0.RKIEUXM:user/release-keys"
-PRODUCT_BUILD_PROP_OVERRIDES += \
-    TARGET_DEVICE=renoir \
-    PRODUCT_NAME=renoir \
-    PRIVATE_BUILD_DESC="renoir-user 11 RKQ1.201112.002 V12.5.3.0.RKIEUXM release-keys"
+BUILD_FINGERPRINT := "google/redfin/redfin:11/RQ3A.210805.001.A1/7474174:user/release-keys"
+

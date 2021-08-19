@@ -109,6 +109,10 @@ PRODUCT_PACKAGES += \
     libhidltransport \
     libhwbinder
 
+# HotwordEnrollement
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/permissions/privapp-permissions-hotword.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/privapp-permissions-hotword.xml
+
 # Live Wallpapers
 PRODUCT_PACKAGES += \
     LiveWallpapers \
@@ -186,3 +190,5 @@ include vendor/qcom/opensource/display-commonsys-intf/config/display-product-sys
 
 PRODUCT_PRODUCT_PROPERTIES += \
     ro.control_privapp_permissions=log
+
+include vendor/xiaomi/renoir/renoir-vendor.mk
