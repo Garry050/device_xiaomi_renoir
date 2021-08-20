@@ -211,4 +211,4 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/vintf/android.hardware.lights-qti.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/android.hardware.lights-qti.xml
 
-include vendor/xiaomi/sweet/sweet-vendor.mk
+include vendor/xiaomi/renoir/renoir-vendor.mk
