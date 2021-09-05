@@ -200,8 +200,6 @@ PRODUCT_PACKAGES += \
     libavservices_minijail \
     libnl \
 
-include vendor/qcom/opensource/display-commonsys-intf/config/display-product-system.mk
-
 PRODUCT_PRODUCT_PROPERTIES += \
     ro.control_privapp_permissions=log
 
