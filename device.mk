@@ -154,6 +154,8 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/rootdir/etc/init.renoir.rc:$(TARGET_COPY_OUT_SYSTEM)/etc/init/init.renoir.rc
 
 # Soong namespaces
+PRODUCT_BOARD_PLATFORM := lahaina
+PRODUCT_USES_QCOM_HARDWARE := true
 PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH)
 
