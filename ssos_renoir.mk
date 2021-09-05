@@ -26,18 +26,15 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 # Inherit from the common Open Source product configuration
 $(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base_telephony.mk)
 
-# must be before including omni part
-TARGET_BOOTANIMATION_SIZE := 1080p
-
 # Inherit from our custom product configuration
-$(call inherit-product, vendor/arrow/config/common.mk)
+$(call inherit-product, vendor/ssos/config/common_full_phone.mk)
 
 # Inherit from hardware-specific part of the product configuration
 $(call inherit-product, device/xiaomi/renoir/device.mk)
 
-# Discard inherited values and use our own instead.
+# ShapeShiftOS inherits
 PRODUCT_DEVICE := renoir
-PRODUCT_NAME := arrow_renoir
+PRODUCT_NAME := ssos_renoir
 PRODUCT_BRAND := Xiaomi
 PRODUCT_MODEL := Mi 11 Lite 5G
 PRODUCT_MANUFACTURER := Xiaomi
@@ -45,5 +42,10 @@ PRODUCT_MANUFACTURER := Xiaomi
 PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
 
 # Build info
-BUILD_FINGERPRINT := "google/redfin/redfin:11/RQ3A.210805.001.A1/7474174:user/release-keys"
+BUILD_FINGERPRINT := "google/walleye/walleye:8.1.0/OPM1.171019.011/4448085:user/release-keys"
 
+TARGET_BOOT_ANIMATION_RES := 1080
+
+# Inherit ShapeShiftOS common properties.
+PRODUCT_PRODUCT_PROPERTIES += \
+    ro.ssos.cpu=SD780
