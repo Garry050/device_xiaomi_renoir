@@ -19,7 +19,7 @@
 # product configuration (apps).
 #
 DEVICE_PATH := device/xiaomi/renoir
-IMAGES_PATH := vendor/images/xiaomi/renoir
+IMAGES_PATH := vendor/xiaomi/renoir/images
 
 BOARD_VENDOR := xiaomi
 
