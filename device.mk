@@ -94,7 +94,7 @@ PRODUCT_PACKAGES += \
     libtinyalsa
 
 # DRM
-PRODUCT_PACKAGES += \ 
+PRODUCT_PACKAGES += \
     libdrm
 
 # fastbootd
