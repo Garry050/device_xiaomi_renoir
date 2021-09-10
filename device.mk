@@ -92,6 +92,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     libtinyalsa
 
+# DRM
+PRODUCT_PACKAGES += \ 
+    libdrm
+
 # fastbootd
 PRODUCT_PACKAGES += \
     android.hardware.fastboot@1.0-impl-mock \
