@@ -22,7 +22,7 @@
 # Sample: This is where we'd set a backup provider if we had one
 # $(call inherit-product, device/sample/products/backup_overlay.mk)
 # Inherit from our custom product configuration
-$(call inherit-product, vendor/lineageos/config/common_full_phone.mk)
+$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 
 # Inherit from hardware-specific part of the product configuration
 $(call inherit-product, device/xiaomi/renoir/device.mk)
@@ -31,7 +31,7 @@ $(call inherit-product, device/xiaomi/renoir/device.mk)
 PRODUCT_DEVICE := renoir
 PRODUCT_NAME := lineage_renoir
 PRODUCT_BRAND := Xiaomi
-PRODUCT_MODEL := M2101K9R
+PRODUCT_MODEL := Mi 11 Lite 5G
 PRODUCT_MANUFACTURER := Xiaomi
 
 PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
