@@ -21,7 +21,4 @@
          3 = right side
     -->
     <integer name="config_fingerprintSensorLocation">2</integer>
-
-    <!-- Whether to show Selinux status in Settings -->
-    <bool name="config_showSelinuxStatus">false</bool>
 </resources>

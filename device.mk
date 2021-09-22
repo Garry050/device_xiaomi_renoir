@@ -114,11 +114,27 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/permissions/privapp-permissions-hotword.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/privapp-permissions-hotword.xml
 
 # NFC
+
+TARGET_USES_NQ_NFC := true
+
+PRODUCT_SOONG_NAMESPACES += \
+    vendor/nxp/opensource/sn100x \
+    vendor/nxp/opensource/packages/apps/Nfc
+
 PRODUCT_PACKAGES += \
-    NfcNci \
-    Tag \
-    SecureElement \
-    com.android.nfc_extras
+   NQNfcNci \
+   libnqnfc-nci \
+   libnqnfc_nci_jni \
+   libsn100nfc_nci_jni \
+   libsn100nfc-nci \
+   com.nxp.nfc.nq \
+   com.nxp.nfc.nq.xml \
+   com.android.nfc_extras \
+   vendor.nxp.hardware.nfc@2.0-service \
+   nfc_nci.nqx.default.hw \
+   se_nq_extn_client \
+   ls_nq_client \
+   jcos_nq_client 
 
 PRODUCT_AAPT_CONFIG := normal
 PRODUCT_AAPT_PREF_CONFIG := xxhdpi
@@ -191,7 +207,7 @@ PRODUCT_PACKAGES += \
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += \
     $(LOCAL_PATH)/overlay \
-    $(LOCAL_PATH)/overlay-ssos
+    $(LOCAL_PATH)/overlay-lineage
 
 # VINTF
 PRODUCT_COPY_FILES += \

@@ -21,28 +21,19 @@
 
 # Sample: This is where we'd set a backup provider if we had one
 # $(call inherit-product, device/sample/products/backup_overlay.mk)
-$(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
-
-# Inherit from the common Open Source product configuration
-$(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base_telephony.mk)
-
 # Inherit from our custom product configuration
-$(call inherit-product, vendor/ssos/config/common_full_phone.mk)
+$(call inherit-product, vendor/lineageos/config/common_full_phone.mk)
 
 # Inherit from hardware-specific part of the product configuration
 $(call inherit-product, device/xiaomi/renoir/device.mk)
 
-# ShapeShiftOS inherits
+# LineageOS inherits
 PRODUCT_DEVICE := renoir
-PRODUCT_NAME := ssos_renoir
+PRODUCT_NAME := lineage_renoir
 PRODUCT_BRAND := Xiaomi
-PRODUCT_MODEL := Mi 11 Lite 5G
+PRODUCT_MODEL := M2101K9R
 PRODUCT_MANUFACTURER := Xiaomi
 
 PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
 
 TARGET_BOOT_ANIMATION_RES := 1080
-
-# Inherit ShapeShiftOS common properties.
-PRODUCT_PRODUCT_PROPERTIES += \
-    ro.ssos.cpu=SD780G
