@@ -100,3 +100,4 @@ void vendor_load_properties() {
         description = "renoir-user 11 RKQ1.201112.002 V12.5.4.0.RKIJPXM release-keys";
 	mod_device = "renoir_jp_global";
     }
+}
