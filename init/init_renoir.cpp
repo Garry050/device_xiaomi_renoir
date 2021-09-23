@@ -100,4 +100,21 @@ void vendor_load_properties() {
         description = "renoir-user 11 RKQ1.201112.002 V12.5.4.0.RKIJPXM release-keys";
 	mod_device = "renoir_jp_global";
     }
+
+    // SafetyNet workaround
+    property_override("ro.boot.verifiedbootstate", "green");
+    property_override("ro.boot.flash.locked", "1");
+    fingerprint = "Xiaomi/dipper/dipper:8.1.0/OPM1.171019.011/V9.5.5.0.OEAMIFA:user/release-keys";
+    description = "dipper-user 8.1.0 OPM1.171019.011 V9.5.5.0.OEAMIFA release-keys";
+
+    set_ro_build_prop("fingerprint", fingerprint);
+    set_ro_product_prop("device", device);
+    set_ro_product_prop("model", model);
+    property_override("ro.product.marketname", marketname.c_str());
+    property_override("ro.build.description", description.c_str());
+    if (mod_device != "") {
+        property_override("ro.product.mod_device", mod_device.c_str());
+    }
+
+    property_override("ro.boot.hardware.revision", hardware_revision.c_str());
 }
