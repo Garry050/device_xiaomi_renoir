@@ -19,6 +19,8 @@
 # device-specific aspects (drivers) with a device-agnostic
 # product configuration (apps).
 #
+$(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
+$(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
 # fusefs / disable sdcardfs usage
 $(call inherit-product, $(SRC_TARGET_DIR)/product/emulated_storage.mk)
