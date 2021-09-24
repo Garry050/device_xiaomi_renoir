@@ -62,6 +62,12 @@ system_ext/lib64/libdpmframework.so
 system_ext/lib64/libdpmtcm.so
 -system_ext/priv-app/dpmserviceapp/dpmserviceapp.apk
 
+# FeliCa
+-system/system/app/MobileFeliCaClient/MobileFeliCaClient.apk
+-system/system/app/MobileFeliCaMenuMainApp/MobileFeliCaMenuMainApp.apk
+-system/system/app/MobileFeliCaSettingApp/MobileFeliCaSettingApp.apk
+-system/system/app/MobileFeliCaWebPluginBoot/MobileFeliCaWebPluginBoot.apk
+
 # GPS
 system_ext/etc/permissions/com.qti.location.sdk.xml
 system_ext/etc/permissions/com.qualcomm.location.xml
