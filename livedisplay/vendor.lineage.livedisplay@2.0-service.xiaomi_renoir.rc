@@ -1,0 +1,12 @@
+on boot
+    chmod 0660 /sys/devices/platform/soc/soc:qcom,dsi-display-primary/hbm
+    chown system system /sys/devices/platform/soc/soc:qcom,dsi-display-primary/hbm
+    chmod 0660 /sys/devices/platform/soc/soc:qcom,dsi-display-secondary/hbm
+    chown system system /sys/devices/platform/soc/soc:qcom,dsi-display-secondary/hbm
+
+service vendor.livedisplay-hal-2-0 /vendor/bin/hw/vendor.lineage.livedisplay@2.0-service.xiaomi_renoir
+    interface vendor.lineage.livedisplay@2.0::IPictureAdjustment default
+    interface vendor.lineage.livedisplay@2.0::ISunlightEnhancement default
+    class hal
+    user system
+    group system

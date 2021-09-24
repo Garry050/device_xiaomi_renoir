@@ -138,6 +138,19 @@ PRODUCT_PACKAGES += \
    ls_nq_client \
    jcos_nq_client 
 
+# IFAA manager
+PRODUCT_PACKAGES += \
+    IFAAService \
+    org.ifaa.android.manager
+
+PRODUCT_BOOT_JARS += \
+    org.ifaa.android.manager
+
+# LiveDisplay
+PRODUCT_PACKAGES += \
+    vendor.lineage.livedisplay@2.0-service-sdm \
+    vendor.lineage.livedisplay@2.0-service.xiaomi_renoir
+
 PRODUCT_AAPT_CONFIG := normal
 PRODUCT_AAPT_PREF_CONFIG := xxhdpi
 
