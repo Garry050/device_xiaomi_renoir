@@ -19,7 +19,6 @@
 # device-specific aspects (drivers) with a device-agnostic
 # product configuration (apps).
 #
-$(call inherit-product, vendor/xiaomi/renoir/FeliCa.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
@@ -225,4 +224,3 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COMPATIBLE_PROPERTY_OVERRIDE := true
 
 include vendor/xiaomi/renoir/renoir-vendor.mk
-include vendor/xiaomi/renoir/FeliCa.mk

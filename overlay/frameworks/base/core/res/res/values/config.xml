@@ -290,17 +290,6 @@
     <!-- Regex of wired ethernet ifaces -->
      <string name="config_ethernet_iface_regex">eth\\d</string>
 
-     <string-array name="config_disableApkUnlessMatchedSku_skus_list" translatable="false">
-        <item>renoir_jp</item>
-     </string-array>
-     <string-array name="config_disableApksUnlessMatchedSku_apk_list" translatable="false">
-        <item>com.felicanetworks.mfs</item>
-        <item>com.felicanetworks.mfw.a.boot</item>
-        <item>com.felicanetworks.mfw.a.main</item>
-        <item>com.felicanetworks.mfm.main</item>
-        <item>com.felicanetworks.mfc</item>
-     </string-array>
-
     <!-- List of biometric sensors on the device, in decreasing strength. Consumed by AuthService
         when registering authenticators with BiometricService. Format must be ID:Modality:Strength,
         where: IDs are unique per device, Modality as defined in BiometricAuthenticator.java,
