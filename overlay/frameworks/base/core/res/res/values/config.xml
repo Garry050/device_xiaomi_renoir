@@ -47,9 +47,6 @@
     <!-- Specifies the maximum burn-in offset vertically. -->
     <integer name="config_burnInProtectionMaxVerticalOffset">40</integer>
 
-    <!-- Whether to show settings for hiding notch fill -->
-    <bool name="config_showHideNotchSettings">true</bool>
-
     <!-- Indicate whether closing the lid causes the device to go to sleep and opening
          it causes the device to wake up.
          The default is false. -->
@@ -74,6 +71,22 @@
     <!-- Boolean indicating whether the HWC setColorTransform function can be performed efficiently
          in hardware. -->
     <bool name="config_setColorTransformAccelerated">true</bool>
+
+     <string-array name="config_disableApksUnlessMatchedSku_apk_list" translatable="false">
+        <item>com.felicanetworks.mfs</item>
+        <item>com.felicanetworks.mfw.a.boot</item>
+          <item>com.felicanetworks.mfw.a.main</item>
+        <item>com.felicanetworks.mfm.main</item>
+        <item>com.felicanetworks.mfc</item>
+     </string-array>
+
+    <!-- List of biometric sensors on the device, in decreasing strength. Consumed by AuthService
+        when registering authenticators with BiometricService. Format must be ID:Modality:Strength,
+        where: IDs are unique per device, Modality as defined in BiometricAuthenticator.java,
+        and Strength as defined in Authenticators.java -->
+    <string-array name="config_biometric_sensors">
+        <item>0:2:15</item>
+    </string-array>
 
     <!-- Power Management: Specifies whether to decouple the auto-suspend state of the
          device from the display on/off state.
@@ -123,7 +136,7 @@
         <item>150</item>
         <item>100</item>
     </integer-array>
-
+    <bool name="config_showHideNotchSettings">true</bool>
     <!-- Flag indicating whether the surface flinger has limited
          alpha compositing functionality in hardware.  If set, the window
          manager will disable alpha trasformation in animations where not
@@ -759,6 +772,10 @@
         <item>418.36</item>
         <item>420</item>
     </array>
+        <string-array name="config_biometric_sensors" translatable="false" >
+        <!-- ID0:Fingerprint:Strong -->
+        <item>0:2:15</item>
+    </string-array>
     <array name="config_availableColorModes">
         <!-- ColorDisplayManager.COLOR_MODE_NATURAL -->
         <item>0</item>
