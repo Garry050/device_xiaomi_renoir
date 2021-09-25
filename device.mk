@@ -19,6 +19,7 @@
 # device-specific aspects (drivers) with a device-agnostic
 # product configuration (apps).
 #
+$(call inherit-product, vendor/xiaomi/renoir/FeliCa.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
@@ -138,14 +139,6 @@ PRODUCT_PACKAGES += \
    ls_nq_client \
    jcos_nq_client 
 
-# IFAA manager
-PRODUCT_PACKAGES += \
-    IFAAService \
-    org.ifaa.android.manager
-
-PRODUCT_BOOT_JARS += \
-    org.ifaa.android.manager
-
 # LiveDisplay
 PRODUCT_PACKAGES += \
     vendor.lineage.livedisplay@2.0-service-sdm \
@@ -232,3 +225,4 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COMPATIBLE_PROPERTY_OVERRIDE := true
 
 include vendor/xiaomi/renoir/renoir-vendor.mk
+include vendor/xiaomi/renoir/FeliCa.mk
