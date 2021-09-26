@@ -64,6 +64,8 @@ void load_dalvik_properties() {
         property_override("dalvik.vm.heapgrowthlimit", "256m");
         property_override("dalvik.vm.heapsize", "512m");
         property_override("dalvik.vm.heapmaxfree", "32m");
+        property_override("dalvik.vm.heaptargetutilization", "0.5");
+        property_override("dalvik.vm.heapminfree", "8m");
 }
 
 
