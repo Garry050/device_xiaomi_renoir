@@ -194,7 +194,8 @@ PRODUCT_PACKAGES_DEBUG += \
 
 # Init
 PRODUCT_PACKAGES += \
-    init.renoir.rc
+    init.renoir.rc \
+    init.zram.sh
 
 PRODUCT_BUILD_SUPER_PARTITION := false
 PRODUCT_USE_DYNAMIC_PARTITIONS := true

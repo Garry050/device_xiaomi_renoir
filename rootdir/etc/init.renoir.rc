@@ -1,8 +1,16 @@
+on init
+    # ZRAM setup
+    write /sys/block/zram0/comp_algorithm lz4
+    write /proc/sys/vm/page-cluster 0
+
 on post-fs-data
     mount none dev/null /vendor/lib/soundfx/libvolumelistener.so bind
     mount none dev/null /vendor/lib64/soundfx/libvolumelistener.so bind
     mount none /system/etc/android.hardware.lights-qti.xml /vendor/etc/vintf/manifest/android.hardware.lights-qti.xml bind
     mount none /vendor/etc/audio/sku_shima_qssi/audio_policy_configuration.xml /vendor/etc/audio/sku_shima/audio_policy_configuration.xml bind
+
+on property:sys.boot_completed=1
+    write /proc/sys/vm/swappiness 60
 
 service vendor.light-qti /vendor/bin/hw/android.hardware.lights-service.qti
     class hal
@@ -11,3 +19,12 @@ service vendor.light-qti /vendor/bin/hw/android.hardware.lights-service.qti
     shutdown critical
     disabled
     override
+
+service zram-on /system/bin/init.zram.sh
+    class core
+    user root
+    group root system
+    oneshot
+
+on post-fs
+    start zram-on
