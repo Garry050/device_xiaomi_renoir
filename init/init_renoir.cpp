@@ -32,6 +32,7 @@
 #include <android-base/properties.h>
 #define _REALLY_INCLUDE_SYS__SYSTEM_PROPERTIES_H_
 #include <sys/_system_properties.h>
+#include <sys/sysinfo.h>
 
 using android::base::GetProperty;
 
@@ -54,6 +55,17 @@ void property_override(char const prop[], char const value[], bool add = true)
     else if (add)
         __system_property_add(prop, strlen(prop), value, strlen(value));
 }
+
+void load_dalvik_properties() {
+    struct sysinfo sys;
+
+    sysinfo(&sys);
+        property_override("dalvik.vm.heapstartsize", "16m");
+        property_override("dalvik.vm.heapgrowthlimit", "256m");
+        property_override("dalvik.vm.heapsize", "512m");
+        property_override("dalvik.vm.heapmaxfree", "32m");
+}
+
 
 void set_ro_build_prop(const std::string &prop, const std::string &value) {
     for (const auto &source : ro_props_default_source_order) {
@@ -117,4 +129,5 @@ void vendor_load_properties() {
     }
 
     property_override("ro.boot.hardware.revision", hardware_revision.c_str());
+    load_dalvik_properties();
 }
