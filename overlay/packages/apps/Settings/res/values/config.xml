@@ -38,4 +38,7 @@
     <string name="config_batteryChargeCycles">/sys/class/power_supply/battery/cycle_count</string>
     <bool name="config_supportBatteryHealth">true</bool>
 
+    <!-- Custom pickup sensor for doze customization -->
+    <string name="pickup_sensor" translatable="false">xiaomi.sensor.pickup</string>
+
 </resources>
