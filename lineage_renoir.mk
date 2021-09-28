@@ -12,21 +12,28 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+#
+# This file is the build configuration for a full Android
+# build for grouper hardware. This cleanly combines a set of
+# device-specific aspects (drivers) with a device-agnostic
+# product configuration (apps).
+#
+
+# Sample: This is where we'd set a backup provider if we had one
+# $(call inherit-product, device/sample/products/backup_overlay.mk)
+# Inherit from our custom product configuration
+$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
+
 # Inherit from hardware-specific part of the product configuration
 $(call inherit-product, device/xiaomi/renoir/device.mk)
 
-# Inherit some common DotOS stuff.
-$(call inherit-product, vendor/dot/config/common.mk)
-TARGET_BOOT_ANIMATION_RES := 1080
-TARGET_SUPPORTS_BLUR := true
-TARGET_FACE_UNLOCK_SUPPORTED := true
-TARGET_SUPPORTS_GOOGLE_RECORDER := true
-TARGET_INCLUDE_STOCK_ARCORE := true
-
+# LineageOS inherits
 PRODUCT_DEVICE := renoir
-PRODUCT_NAME := dot_renoir
+PRODUCT_NAME := lineage_renoir
 PRODUCT_BRAND := Xiaomi
 PRODUCT_MODEL := Mi 11 Lite 5G
 PRODUCT_MANUFACTURER := Xiaomi
 
 PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
+
+TARGET_BOOT_ANIMATION_RES := 1080
