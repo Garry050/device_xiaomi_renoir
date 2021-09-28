@@ -8,9 +8,11 @@ ro.bluetooth.library_name=libbluetooth_qti.so
 
 # Camera
 camera.disable_zsl_mode=true
+vendor.camera.aux.packagelist=org.codeaurora.snapcam,com.android.camera,org.lineageos.snap
 
 # Charger
 ro.charger.disable_init_blank=true
+ro.charger.enable_suspend=true
 
 # Display
 debug.gralloc.gfx_ubwc_disable=0
@@ -35,6 +37,9 @@ vendor.iop.enable_uxe=0
 
 # Media
 media.settings.xml=/vendor/etc/media_profiles_vendor.xml
+
+# Netflix custom property
+ro.netflix.bsp_rev=Q6150-17263-1
 
 # Perf
 ro.vendor.qti.core_ctl_max_cpu=4
