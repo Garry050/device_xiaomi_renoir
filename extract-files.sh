@@ -24,9 +24,9 @@ VENDOR=xiaomi
 MY_DIR="${BASH_SOURCE%/*}"
 if [[ ! -d "${MY_DIR}" ]]; then MY_DIR="${PWD}"; fi
 
-ARROW_ROOT="${MY_DIR}"/../../..
+DOT_ROOT="${MY_DIR}"/../../..
 
-HELPER="${ARROW_ROOT}/tools/extract-utils/extract_utils.sh"
+HELPER="${DOT_ROOT}/vendor/dot/build/tools/extract_utils.sh"
 if [ ! -f "${HELPER}" ]; then
     echo "Unable to find helper script at ${HELPER}"
     exit 1
@@ -60,7 +60,7 @@ done
 
 # Get the host OS
 HOST="$(uname | tr '[:upper:]' '[:lower:]')"
-PATCHELF_TOOL="${ARROW_ROOT}/prebuilts/tools-extras/${HOST}-x86/bin/patchelf"
+PATCHELF_TOOL="${DOT_ROOT}/prebuilts/tools-extras/${HOST}-x86/bin/patchelf"
 
 # Check if prebuilt patchelf exists
 if [ -f $PATCHELF_TOOL ]; then
@@ -93,7 +93,7 @@ function blob_fixup() {
 }
 
 # Initialize the helper for common device
-setup_vendor "${DEVICE}" "${VENDOR}" "${ARROW_ROOT}" true "${CLEAN_VENDOR}"
+setup_vendor "${DEVICE}" "${VENDOR}" "${DOT_ROOT}" true "${CLEAN_VENDOR}"
 
 extract "${MY_DIR}/proprietary-files.txt" "${SRC}" \
         "${KANG}" --section "${SECTION}"
