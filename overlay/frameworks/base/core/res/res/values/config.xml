@@ -573,6 +573,25 @@
         <item>7</item>
     </integer-array>
 
+    <!-- Vibrator pattern for a very short but reliable vibration for soft keyboard tap -->
+    <integer-array name="config_keyboardTapVibePattern">
+        <item>10</item>
+    </integer-array>
+
+    <integer-array name="config_defaultNotificationVibePattern">
+        <item>0</item>
+        <item>180</item>
+        <item>80</item>
+        <item>180</item>
+    </integer-array>
+
+    <integer-array name="config_notificationFallbackVibePattern">
+        <item>0</item>
+        <item>100</item>
+        <item>150</item>
+        <item>100</item>
+    </integer-array>
+
     <!-- Stability requirements in milliseconds for accepting a new brightness level.  This is used
          for debouncing the light sensor.  Different constants are used to debounce the light sensor
          when adapting to brighter or darker environments.  This parameter controls how quickly
