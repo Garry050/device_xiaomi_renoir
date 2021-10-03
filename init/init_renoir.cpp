@@ -114,6 +114,9 @@ void vendor_load_properties() {
         description = "renoir-user 11 RKQ1.201112.002 V12.5.4.0.RKIJPXM release-keys";
 	mod_device = "renoir_jp_global";
     }
+    // Volume steps workaround
+    property_override("ro.config.media_vol_steps", "30");
+    property_override("ro.config.media_vol_default", "15");
 
     // SafetyNet workaround
     property_override("ro.boot.verifiedbootstate", "green");
