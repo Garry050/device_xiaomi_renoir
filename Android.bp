@@ -1,6 +1,5 @@
 soong_namespace {
     imports: [
-        "hardware/qcom/bootctrl", 
-        "hardware/xiaomi"
+        "device/xiaomi/sm8350-common",
     ],
 }
