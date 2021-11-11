@@ -22,38 +22,25 @@
     -->
     <bool name="config_powerDecoupleAutoSuspendModeFromDisplay">true</bool>
 
-    <!-- Vibrator pattern for feedback about a long screen/key press -->
-    <integer-array name="config_longPressVibePattern">
-        <item>0</item>
-        <item>12</item>
-        <item>7</item>
-    </integer-array>
+    <!-- The default intensity level for haptic feedback. See
+        Settings.System.HAPTIC_FEEDBACK_INTENSITY more details on the constant values and
+        meanings. -->
+    <integer name="config_defaultHapticFeedbackIntensity">3</integer>
 
-    <!-- Vibrator pattern for feedback about touching a virtual key -->
-    <integer-array name="config_virtualKeyVibePattern">
-        <item>0</item>
-        <item>12</item>
-        <item>7</item>
-    </integer-array>
+    <!-- The default intensity level for notification vibrations. See
+        Settings.System.NOTIFICATION_VIBRATION_INTENSITY more details on the constant values and
+        meanings. -->
+    <integer name="config_defaultNotificationVibrationIntensity">3</integer>
 
-    <!-- Vibrator pattern for a very short but reliable vibration for soft keyboard tap -->
-    <integer-array name="config_keyboardTapVibePattern">
-        <item>10</item>
-    </integer-array>
+    <!-- The default intensity level for notification vibrations. See
+        Settings.System.RING_VIBRATION_INTENSITY more details on the constant values and
+        meanings. -->
+    <integer name="config_defaultRingVibrationIntensity">3</integer>
 
-    <integer-array name="config_defaultNotificationVibePattern">
-        <item>0</item>
-        <item>180</item>
-        <item>80</item>
-        <item>180</item>
-    </integer-array>
-
-    <integer-array name="config_notificationFallbackVibePattern">
-        <item>0</item>
-        <item>100</item>
-        <item>150</item>
-        <item>100</item>
-    </integer-array>
+    <!-- Enables or disables haptic effect when the text insertion/selection handle is moved
+        manually by the user. Off by default, since the expected haptic feedback may not be
+        available on some devices. -->
+    <bool name="config_enableHapticTextHandle">true</bool>
 
     <!-- Flag indicating whether the surface flinger has limited
          alpha compositing functionality in hardware.  If set, the window
@@ -712,15 +699,18 @@
 
     <!-- The default peak refresh rate for a given device. Change this value if you want to allow
          for higher refresh rates to be automatically used out of the box -->
-    <integer name="config_defaultRefreshRate">0</integer>
-
-    <!-- The default peak refresh rate. -->
     <integer name="config_defaultPeakRefreshRate">90</integer>
 
-    <!-- Enables or disables haptic effect when the text insertion/selection handle is moved
-        manually by the user. Off by default, since the expected haptic feedback may not be
-        available on some devices. -->
-    <bool name="config_enableHapticTextHandle">true</bool>
+    <!-- The default refresh rate for a given device. Change this value to set a higher default
+         refresh rate. If the hardware composer on the device supports display modes with a higher
+         refresh rate than the default value specified here, the framework may use those higher
+         refresh rate modes if an app chooses one by setting preferredDisplayModeId or calling
+         setFrameRate().
+         If a non-zero value is set for config_defaultPeakRefreshRate, then
+         config_defaultRefreshRate may be set to 0, in which case the value set for
+         config_defaultPeakRefreshRate will act as the default frame rate. -->
+    <integer name="config_defaultRefreshRate">90</integer>
+
     <array name="config_availableColorModes">
         <!-- ColorDisplayManager.COLOR_MODE_NATURAL -->
         <item>0</item>

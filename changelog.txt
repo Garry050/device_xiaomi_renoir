@@ -1,8 +1,0 @@
-Highlights & Device Specific Changes:
-Build type: Unofficial
-Device: Xiaomi Mi 11 Lite 5G (renoir)
-Device maintainer: Garry050,ArianK16a
-
-===== 20211108 =====
-- Initial build
-- Test FeliCa things
