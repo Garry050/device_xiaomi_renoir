@@ -11,6 +11,9 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 # Inherit from renoir device
 $(call inherit-product, device/xiaomi/renoir/device.mk)
 
+# Inherit some common DotOS stuff.
+$(call inherit-product, vendor/dot/config/common.mk)
+
 PRODUCT_BRAND := Xiaomi
 PRODUCT_DEVICE := renoir
 PRODUCT_MANUFACTURER := Xiaomi
