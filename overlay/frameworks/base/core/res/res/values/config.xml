@@ -722,10 +722,4 @@
         <item>3</item>
     </array>
 
-    <!-- Whether to show settings for hiding notch fill -->
-    <bool name="config_showHideNotchSettings">true</bool>
-
-    <!-- Whether the device supports Smart Pixels -->
-    <bool name="config_enableSmartPixels">true</bool>
-
 </resources>

@@ -1,13 +1,13 @@
 #
-# Copyright (C) 2021 The LineageOS Project
+# Copyright (C) 2021 The DotOS Project
 #
 # SPDX-License-Identifier: Apache-2.0
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/lineage_renoir.mk
+    $(LOCAL_DIR)/dot_renoir.mk
 
 COMMON_LUNCH_CHOICES := \
-    lineage_renoir-user \
-    lineage_renoir-userdebug \
-    lineage_renoir-eng
+    dot_renoir-user \
+    dot_renoir-userdebug \
+    dot_renoir-eng
