@@ -5,9 +5,9 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/dot_renoir.mk
+    $(LOCAL_DIR)/ssos_renoir.mk
 
 COMMON_LUNCH_CHOICES := \
-    dot_renoir-user \
-    dot_renoir-userdebug \
-    dot_renoir-eng
+    ssos_renoir-user \
+    ssos_renoir-userdebug \
+    ssos_renoir-eng
