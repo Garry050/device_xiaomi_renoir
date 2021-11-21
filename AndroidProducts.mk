@@ -5,9 +5,9 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/dot_renoir.mk
+    $(LOCAL_DIR)/havoc_renoir.mk
 
 COMMON_LUNCH_CHOICES := \
-    dot_renoir-user \
-    dot_renoir-userdebug \
-    dot_renoir-eng
+    havoc_renoir-user \
+    havoc_renoir-userdebug \
+    havoc_renoir-eng
